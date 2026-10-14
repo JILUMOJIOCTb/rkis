@@ -1,0 +1,65 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int n = 1;
+    cout << setw(6) << "N" 
+         << setw(6) << "10*N" 
+         << setw(6) << "100*N" 
+         << setw(6) << "1000*N" << endl;
+
+    while (n <= 5) {
+        cout << setw(6) << n 
+             << setw(6) << n * 10 
+             << setw(6) << n * 100 
+             << setw(6) << n * 1000 << endl;
+        n++; 
+    }
+    return 0;
+}
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int choice;
+    int limit;
+
+    cout << "меню вывода таблицы" << endl;
+    cout << "1. диапазон N = 1-5" << endl;
+    cout << "2. диапазон N = 1-10" << endl;
+    cout << "3. диапазон N = 1-30" << endl;
+    cout << "выберите пункт (1-3): ";
+    
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            limit = 5;
+            break;
+        case 2:
+            limit = 10;
+            break;
+        case 3:
+            limit = 30;
+            break;
+    }
+    
+    cout << setw(6) << "\n" << "N " 
+         << setw(6) << "10*N  " 
+         << setw(6) << "100*N " 
+         << setw(6) << "1000*N" << endl;
+
+    for (int n = 1; n <= limit; n++) {
+        cout << setw(1) << n 
+             << setw(4) << n * 10 
+             << setw(6) << n * 100 
+             << setw(7) << n * 1000 << endl;
+    }
+    return 0;
+}

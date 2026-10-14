@@ -1,0 +1,92 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
+    double start_odometer = 67308.0;
+    double end_odometer = 68750.5;
+
+    double refuel1 = 11.7;
+    double refuel2 = 14.3;
+    double refuel3 = 12.2;
+    double refuel4 = 8.5;
+
+    double total_fuel;
+    double total_distance;
+    double consumption;
+
+    total_fuel = refuel1 + refuel2 + refuel3 + refuel4;
+
+    total_distance = end_odometer - start_odometer;
+
+    consumption = total_fuel / total_distance;
+
+    cout << "расчет расхода бензина" << endl;
+    
+    cout << "начальный пробег: " << start_odometer << " км" << endl;
+    cout << "конечный пробег:  " << end_odometer << " км" << endl;
+    cout << "пройденный путь:  " << total_distance << " км" << endl;
+    cout << "всего залито:     " << total_fuel << " л" << endl;
+    
+    cout << fixed << setprecision(4);
+    
+    cout << "расход топлива:   " << consumption << " л/км" << endl;
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "демонстрация оператора n++" << endl;
+    
+    int a = 5;
+    
+    cout << "начальное значение a: " << a << endl;
+    cout << "a++ возвращает: " << a++ << endl;
+    cout << "значение a после a++: " << a << endl << endl;
+
+    cout << "демонстрация оператора ++n" << endl;
+
+    int b = 5;
+    cout << "начальное значение b: " << b << endl;
+    cout << "++b возвращает: " << ++b << endl;
+    cout << "значение b после ++b: " << b << endl << endl;
+
+    cout << "демонстрация оператора n--" << endl;
+
+    int a1 = 5;
+    
+    cout << "начальное значение a1: " << a1 << endl;
+    cout << "a1-- возвращает: " << a1-- << endl;
+    cout << "значение a после a1--: " << a1 << endl << endl;
+
+    cout << "демонстрация оператора --n" << endl;
+
+    int b1 = 5;
+    cout << "начальное значение b1: " << b1 << endl;
+    cout << "--b1 возвращает: " << --b1 << endl;
+    cout << "значение b1 после --b1: " << b1 << endl << endl;
+    return 0;
+}
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    cout << setw(4) << "*" << endl;
+    cout << setw(5) << "***" << endl;
+    cout << setw(6) << "*****" << endl;
+    cout << setw(7) << "*******" << endl;
+
+    return 0;
+}
+
+

@@ -1,0 +1,87 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ofstream outFile("source.txt");
+    
+    if (!outFile.is_open()) {
+        cerr << "ошибка не удалось создать файл" << endl;
+        return 1;
+    }
+    
+    for (int i = 0; i < 10; i++) {
+        outFile << i;
+    }
+    outFile.close();
+    cout << "файл 'source.txt' создан успешно" << endl << endl;
+
+    ifstream inFile("source.txt");
+    ofstream destFile("destination.txt");
+
+    if (!inFile.is_open()) {
+        cerr << "ошибка не удалось открыть файл 'source.txt' для чтения" << endl;
+        return 1;
+    }
+    
+    if (!destFile.is_open()) {
+        cerr << "ошибкаа не удалось открыть'destination.txt' для чтения" << endl;
+        inFile.close();
+        return 1;
+    }
+
+    cout << "информация прочитана из файла и записана в 'destination.txt':" << endl;
+    
+    char ch;
+    while (inFile.get(ch)) {
+        cout << ch;
+        destFile << ch;
+    }
+    
+    cout << endl << endl << "операция успешно завершена" << endl;
+
+    inFile.close();
+    destFile.close();
+
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    ofstream outFile("text.txt");
+    
+    if (!outFile.is_open()) {
+        cerr << "ошибка не удалось создать файл" << endl;
+        return 1;
+    }
+    
+    outFile << "текст" << endl;
+
+    
+    outFile.close();
+    cout << "файл 'text.txt' успешно создан" << endl << endl;
+
+    ifstream inFile("text.txt");
+    
+    if (!inFile.is_open()) {
+        cerr << "ошибка не удаалось открыть файл для чтения" << endl;
+        return 1;
+    }
+
+    cout << "содержимое файла:" << endl;
+    
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+
+    return 0;
+}

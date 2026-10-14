@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "заглавные буквы: ";
+    for (char c = 'A'; c <= 'Z'; c++) {
+        cout << c << " ";
+    }
+    
+    cout << endl << endl;
+
+    cout << "строчные буквы: ";
+    
+    for (char c = 'a'; c <= 'z'; c++) {
+        cout << c << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
+
+
+#include <iostream>
+#include <cctype>
+using namespace std;
+
+int main() {
+char num;
+
+cout << "введите букву для преобразования в соотв. цифру телефонного аппарата" << endl;
+cout << "для выхода введите Q/Z" << endl;
+
+while(true){
+cout << "введите букву: ";
+cin >> num;
+char upernum = toupper(num);
+if(upernum == 'Q' || upernum == 'Z'){
+    cout << "встречена букву " << upernum << "завершение работы" << endl;
+    break;
+}
+if(!isalpha(num)){
+    cout << "ошибка " << num << " не является буквой" << endl;
+    continue;
+}
+cout << "буква " << upernum << "соответствует цифре: ";
+switch(upernum){
+    case 'A':
+    case 'B':
+    case 'C':
+    cout << "2" << endl;
+    break;
+
+    case 'D':
+    case 'E':
+    case 'F':
+    cout << "3" << endl;
+    break;
+
+    case 'G':
+    case 'H':
+    case 'I':
+    cout << "4" << endl;
+    break;
+
+    case 'J':
+    case 'K':
+    case 'L':
+    cout << "5" << endl;
+    break;
+
+    case 'M':
+    case 'N':
+    case 'O':
+    cout << "6" << endl;
+    break;
+
+    case 'P':
+    case 'R':
+    case 'S':
+    cout << "7" << endl;
+    break;
+
+    case 'T':
+    case 'U':
+    case 'V':
+    cout << "8" << endl;
+    break;
+
+    case 'W':
+    case 'X':
+    case 'Y':
+    cout << "9" << endl;
+    break;
+    default:
+    cout << "не удалось определить символ" << endl;
+    break;
+}
+
+}
+return 0;
+}
+
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int rows = 4;
+
+    for (int i = 1; i <= rows; i++) {
+        cout << setw(rows - i + 1); 
+        for (int j = 0; j < (2 * i - 1); j++) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
